@@ -29,6 +29,6 @@
         </StackPanel>
         
         <DataGrid CanUserAddRows="True" ItemsSource="{Binding SelectedDepartment.employees}" Grid.Column="1" Margin="5,0,0,0" RowEditEnding="Edit_Row"/>
-        <Button Background="LightBlue" Grid.Row="2" Grid.Column="2"  Margin="5,10,0,0" Click="Save_New_Item">Save New Employees</Button>
+        <Button Background="LightBlue" Grid.Row="2" Grid.Column="2"  Margin="5,10,0,0" Click="Save_New_Employee">Save New Employees</Button>
     </Grid>
 </Window>

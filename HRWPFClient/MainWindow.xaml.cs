@@ -40,7 +40,7 @@ namespace HRWPFClient
 
         }
 
-        private void Save_New_Item(object sender, RoutedEventArgs e)
+        private void Save_New_Employee(object sender, RoutedEventArgs e)
         {
             HRWPFClient.WPFVM viewModel = (HRWPFClient.WPFVM)DataContext;
 
@@ -74,5 +74,7 @@ namespace HRWPFClient
                 MessageBox.Show("Please enter a valid department");
             }
             }
+
+      
     }
 }
