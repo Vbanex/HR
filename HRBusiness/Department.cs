@@ -34,6 +34,12 @@ namespace HR.Business
             
         }
 
+        public void AddDepartment(string name)
+        {
+            departmentTableAdapter departmentTableAdapter = new departmentTableAdapter();
+            departmentTableAdapter.InsertNewDepartment(name);
+        }
+
      
             public static List<Department> GetDepartments()
         {

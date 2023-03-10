@@ -1,0 +1,7 @@
+﻿namespace HRBusiness
+{
+}
+
+namespace HRBusiness
+{
+}

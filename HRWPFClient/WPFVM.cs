@@ -36,5 +36,12 @@ namespace HRWPFClient
             get { return _employees; }
             set { _employees = value; }
             }
+
+        private Department _newDepartment = new Department();
+        public Department NewDepartment
+        {
+            get { return _newDepartment; }
+            set { _newDepartment = value; }
+        }
     }
 }

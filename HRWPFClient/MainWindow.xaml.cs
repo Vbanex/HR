@@ -42,13 +42,37 @@ namespace HRWPFClient
 
         private void Save_New_Item(object sender, RoutedEventArgs e)
         {
-            HRWPFClient.WPFVM viewModel = (HRWPFClient.WPFVM) DataContext;
+            HRWPFClient.WPFVM viewModel = (HRWPFClient.WPFVM)DataContext;
 
+            if(viewModel.Employees.Any())
+            {
             foreach (var employee in viewModel.Employees)
             {
                 viewModel.SelectedDepartment.CreateNewEmployee(employee.FirstName, employee.LastName, employee.Salary, employee.Designation);
             }
             BindingOperations.GetBindingExpressionBase(cboDepartment, ComboBox.ItemsSourceProperty).UpdateTarget();
+            }
+
+            else
+            {
+                MessageBox.Show("Please enter an employee details");
+            }
         }
+
+        private void Add_Department(object sender, RoutedEventArgs e)
+        {
+            HRWPFClient.WPFVM viewModel = (HRWPFClient.WPFVM)DataContext;
+            HR.Business.Department newDepartment = viewModel.NewDepartment as HR.Business.Department;
+            if (!string.IsNullOrWhiteSpace(newDepartment.Name))
+            {
+                newDepartment.AddDepartment(newDepartment.Name);
+                txtDept.Clear();
+                BindingOperations.GetBindingExpressionBase(cboDepartment, ComboBox.ItemsSourceProperty).UpdateTarget();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid department");
+            }
+            }
     }
 }
